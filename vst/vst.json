@@ -1,0 +1,11 @@
+{
+  "name": "Gx Amp",
+  "vendor": "lunarscraper",
+  "uid": "GxAm",
+  "version": 1000,
+  "so": "gxamp.so",
+  "module": "module.json",
+  "layout": "layout.conf",
+  "effect": true,
+  "_comment": "Insert effect: Guitarix's guitar amp (tube models, tonestacks, cabinets, pedals, reverb; vendored in gx/) for a real guitar on an audio input and for RiffBox. vst.json/module.json only feed mpc-vst-plugins' tools/gen_vst.py for params.h + the skin. The plugin is gxamp_vst.cpp + gx/, built by this port's own build.sh."
+}

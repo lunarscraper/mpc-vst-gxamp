@@ -1,0 +1,7 @@
+gxamp_vst.cpp
+gx/gxm_amps.cpp
+gx/gxm_pedals.cpp
+gx/gxm_ts9.cpp
+gx/dsp/gx_resampler.cc
+gx/zita-resampler/resampler.cc
+gx/zita-resampler/resampler-table.cc
