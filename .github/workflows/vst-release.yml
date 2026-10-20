@@ -1,0 +1,30 @@
+name: VST release (draft)
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version, e.g. 0.1.0
+        required: true
+        default: 0.1.0
+      dry_run:
+        description: Build only (zip + skin previews as run artifacts), no draft release
+        type: boolean
+        default: true
+
+jobs:
+  gxamp:
+    uses: sd88me/mpc-vst-plugins/.github/workflows/vst-release.yml@259f75d0ce0f836cfd89cc0a33c550b55917cffc
+    permissions:
+      contents: write
+    with:
+      tag: gxamp-vst-v${{ inputs.version }}
+      version: ${{ inputs.version }}
+      tools_ref: 259f75d0ce0f836cfd89cc0a33c550b55917cffc
+      vst_dir: vst
+      build: bash vst/build.sh
+      host_test: bash vst/test.sh
+      plugin_id: gxamp
+      license: GPL-3.0-or-later
+      about: Guitarix guitar amp (insert effect) for a real guitar on an audio input or RiffBox - 18 Guitarix tube models, 27 tonestacks, 18 cabinets with presence, Tube Screamer / Fuzz Face / Big Muff / RAT pedal, noise gate, tempo-synced delay, stereo reverb, tuner; 32 preset slots with LOAD/SAVE.
+      dry_run: ${{ inputs.dry_run }}
